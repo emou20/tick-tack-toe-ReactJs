@@ -1,31 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import App from './App';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from "react-redux";
 
-import Board from './Board';
-
-
-class Game extends React.Component {
-
-
-  render() {
-    return (
-      <div className="game">
-        <div className="game-board">
-          <Board />
-        </div>
-        <div className="game-info">
-          <div>{/* status */}</div>
-          <ol>{/* TODO */}</ol>
-        </div>
-      </div>
-    );
-  }
-}
-
-// ========================================
+import store from "./store"
 
 ReactDOM.render(
-  <Game />,
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root')
 );

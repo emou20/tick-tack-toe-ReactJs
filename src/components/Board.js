@@ -19,6 +19,8 @@ class Board extends React.Component {
     }
     squares[i] = this.state.xIsNext ? 'X' : 'O';
     this.setState({squares: squares, xIsNext: !this.state.xIsNext,});
+    console.log(squares[i], i);
+    console.log(this.state.xIsNext);
   }
     renderSquare(i) {
       return (
